@@ -5,7 +5,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
-export default function Balance(saldo, gastos) {
+export default function Balance({saldo, gastos}) {
     return (
         <View style={styles.container}>
 
@@ -14,13 +14,17 @@ export default function Balance(saldo, gastos) {
 
                 <View style={styles.container}>
                     <Text style={styles.currencySymbol}>R$</Text>
-                    <Text style={styles.balance}>1.5000,00</Text>
+                    <Text style={styles.balance}>
+                        {saldo}
+                    </Text>
                 </View>
 
             </View>
 
             <View style={styles.item}>
-                <Text style={styles.itemTitle}>Gastos</Text>
+                <Text style={styles.itemTitle}>
+                    {gastos}
+                </Text>
 
                 <View style={styles.container}>
                     <Text style={styles.currencySymbol}>R$</Text>
