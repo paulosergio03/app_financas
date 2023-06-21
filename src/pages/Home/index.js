@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from '../../components/Header'
 import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
+import Actions from '../../components/Actions';
 
 const list = [
   {
@@ -33,7 +34,9 @@ export default function Home() {
     <View style={styles.container}>
       <Header name="Sara Silva" />
 
-      <Balance saldo="9.250.90" gastos="-527,00" />
+      <Balance saldo="9.250.90" gastos="527,00" />
+
+      <Actions />
 
       <Text style={styles.title}>Últimas movimentações</Text>
 
@@ -42,7 +45,7 @@ export default function Home() {
         data={list}
         keyExtractor={(item) => String(item.id)}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <Movements data={item}/> }
+        renderItem={({ item }) => <Movements data={item} />}
       />
     </View>
   );
